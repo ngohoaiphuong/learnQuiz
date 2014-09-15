@@ -1,0 +1,23 @@
+%div{ "main-header" => "", "item" => "1" }
+%div{"flash-message" => ""}
+.container
+  .my-control
+    %button.btn.btn-large.btn-default#btnNewUser{ :type => "submit", "ng-click" => "createUser()" }
+      %span.glyphicon.glyphicon-plus.blue
+      New User
+    .lists
+      %table.table.table-striped.table-bordered
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Role
+            %th Actions
+        %tbody{"ng-repeat" => "user in users"}
+          %tr
+            %th {{ user.username }}
+            %th {{ user.email }}
+            %th {{ user.role }}
+            %th 
+              %a{ "ng-href" => '#/users/{{ user.id }}/edit' } Edit
+              %a{ "ng-click" => 'deleteUser($index, user.id)' } Delete            

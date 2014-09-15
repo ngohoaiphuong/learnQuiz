@@ -1,16 +1,12 @@
 {
-  "lib": {
-    "name": "bower-rails generated lib assets",
-    "dependencies": {
-      "angular": "latest",
-      "angular-ui-router": "latest",
-      "angular-animate": "latest",
-      "bootstrap-sass-official": "latest"
-    }
-  },
-  "vendor": {
-    "name": "bower-rails generated vendor assets",
-    "dependencies": {
-    }
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "bootstrap-sass-official": "latest",
+    "angular-flash": "latest",
+    "angular-resource": "latest",
+    "angular-mocks": "latest",
+    "angular-ui-router": "latest"
   }
 }

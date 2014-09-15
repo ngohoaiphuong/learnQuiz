@@ -1,0 +1,23 @@
+%div{ "main-header" => "", "item" => "2" }
+%div{"flash-message" => ""}
+.container
+  .my-control
+    %button.btn.btn-large.btn-default#btnNewUser{ :type => "submit", "ng-click" => "createTest()" }
+      %span.glyphicon.glyphicon-plus.blue
+      New Test
+    .lists
+      %table.table.table-striped.table-bordered
+        %thead
+          %tr
+            %th Name
+            %th Description
+            %th # Questions
+            %th Actions
+        %tbody{"ng-repeat" => "test in tests"}          
+          %tr
+            %th {{ test.name }}
+            %th {{ test.description }}
+            %th {{ test.questions.length }}
+            %th 
+              %a{ "ng-href" => '#/tests/{{ test.id }}/edit' } Edit
+              %a{ "ng-click" => 'deleteTest($index, test.id)' } Delete            

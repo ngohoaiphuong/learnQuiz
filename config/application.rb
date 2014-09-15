@@ -11,7 +11,8 @@ end
 
 module LearnQuiz
   class Application < Rails::Application
-    require "/Users/ngohoaiphuong/Projects/phuongngo/learnQuiz/config/initializers/bower_rails.rb"
+    # require "/Users/ngohoaiphuong/Projects/phuongngo/learnQuiz/config/initializers/bower_rails.rb"
+    require "#{config.root}/config/initializers/bower_rails.rb"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -59,5 +60,11 @@ module LearnQuiz
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # set path config for assets
+    config.assets.paths << Rails.root.join('vendor/assets/bower_components')
+    config.assets.paths << Rails.root.join('vendor/assets/bower_components/bootstrap-sass-official/assets/fonts')
+    config.autoload_paths += %W(#{config.root}/app/controllers/concerns)
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
