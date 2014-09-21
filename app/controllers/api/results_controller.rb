@@ -7,12 +7,12 @@ class Api::ResultsController < ApplicationController
     params[:user_id] = @current_user.id
     results = Results.where(user_id: params[:user_id], quiz_id: params[:quiz_id])
     if results.present?
-      if !results[0].update_attributes(params)
+      if !results[0].update_attributes(param_for_result)
         render_error('Update result failure')
         return
       end
     else
-      if !Results.create(params)
+      if !Results.create(param_for_result)
         render_error('Create result failure')
         return
       end
